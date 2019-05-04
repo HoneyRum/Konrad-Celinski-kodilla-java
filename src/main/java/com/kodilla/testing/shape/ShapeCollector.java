@@ -1,0 +1,45 @@
+package com.kodilla.testing.shape;
+
+import java.util.ArrayList;
+
+
+
+public class ShapeCollector {
+    private ArrayList<Shape> shapes = new ArrayList<>();
+    public void addFigure(Shape shape){
+        shapes.add(shape);
+    }
+    public boolean removeFigure(Shape shape){
+        int startingSize = shapes.size();
+        shapes.remove(shape);
+        if(startingSize==shapes.size()){
+            return false;
+        } else {
+            return true;
+        }
+    }
+    public Shape getFigure(int a){
+        if(a>=0){
+            if(shapes.size()>=a){
+                return shapes.get(a);
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
+    }
+    public ArrayList<String> showFigures(){
+        ArrayList<String> names = new ArrayList<>();
+        for(Shape shapeName : shapes){
+            String name = shapeName.getShapeName();
+            names.add(name);
+        }
+        return names;
+    }
+
+    public int getSize(){
+        return shapes.size();
+    }
+
+}
