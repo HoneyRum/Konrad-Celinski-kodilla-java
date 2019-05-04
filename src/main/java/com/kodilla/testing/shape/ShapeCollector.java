@@ -19,12 +19,8 @@ public class ShapeCollector {
         }
     }
     public Shape getFigure(int a){
-        if(a>=0){
-            if(shapes.size()>=a){
-                return shapes.get(a);
-            } else {
-                return null;
-            }
+        if(shapes.size()>=a && a>=0){
+            return shapes.get(a);
         } else {
             return null;
         }
