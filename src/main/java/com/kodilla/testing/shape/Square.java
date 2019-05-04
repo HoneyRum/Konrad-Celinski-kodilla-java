@@ -11,7 +11,6 @@ public class Square implements Shape{
     public String getShapeName(){
         return name;
     }
-
     public double getShapeField(){
         return 2*side;
     }

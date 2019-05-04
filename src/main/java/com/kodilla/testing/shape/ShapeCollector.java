@@ -33,7 +33,6 @@ public class ShapeCollector {
         }
         return names;
     }
-
     public int getSize(){
         return shapes.size();
     }

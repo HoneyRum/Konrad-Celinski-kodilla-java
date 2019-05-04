@@ -122,5 +122,4 @@ public class ShapeTestSuite {
         //Then
         Assert.assertEquals(expectedStrings, showTest);
     }
-
 }
