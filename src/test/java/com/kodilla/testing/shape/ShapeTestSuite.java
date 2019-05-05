@@ -74,6 +74,22 @@ public class ShapeTestSuite {
         Assert.assertEquals(exampleSquare, gottenFigure);
     }
     @Test
+    public void testGetZeroFigure(){
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Shape exampleCircle = new Circle(5, "Circle");
+        Shape exampleTriangle = new Triangle(3.0, 4.0, "Triangle");
+        Shape exampleSquare = new Square(6, "Square");
+        shapeCollector.addFigure(exampleCircle);
+        shapeCollector.addFigure(exampleTriangle);
+        shapeCollector.addFigure(exampleSquare);
+        //When
+        Shape gottenFigure = shapeCollector.getFigure(0);
+        //Then
+        Assert.assertEquals(exampleCircle, gottenFigure);
+    }
+
+    @Test
     public void testGetMinusFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
@@ -99,7 +115,7 @@ public class ShapeTestSuite {
         shapeCollector.addFigure(exampleTriangle);
         shapeCollector.addFigure(exampleSquare);
         //When
-        Shape plusFigure = shapeCollector.getFigure(15);
+        Shape plusFigure = shapeCollector.getFigure(3);
         //Then
         Assert.assertNull(plusFigure);
     }
@@ -122,4 +138,5 @@ public class ShapeTestSuite {
         //Then
         Assert.assertEquals(expectedStrings, showTest);
     }
+
 }
