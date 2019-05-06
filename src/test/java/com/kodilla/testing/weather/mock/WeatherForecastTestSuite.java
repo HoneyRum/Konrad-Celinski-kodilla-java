@@ -23,10 +23,8 @@ public class WeatherForecastTestSuite {
         temperaturesMap.put(4, 26.1);
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
-
         //When
         int quantityOfSensors = weatherForecast.calculateForecast().size();
-
         //Then
         Assert.assertEquals(5, quantityOfSensors);
     }
