@@ -30,12 +30,12 @@ public class StatCollectorTestSuite {
         //When
         ArrayList<Double> actualResults = statCollector.calculateAdvStatistics(statisticsMock);
         ArrayList<Double> expectedResults = new ArrayList<>();
-        expectedResults.add(50.0);
-        expectedResults.add(0.0);
-        expectedResults.add(200.0);
-        expectedResults.add(0.0);
-        expectedResults.add(4.0);
-        expectedResults.add(0.0);
+        expectedResults.add(50.0);              //users
+        expectedResults.add(0.0);               //posts
+        expectedResults.add(200.0);             //comments
+        expectedResults.add(0.0);               //average posts per user
+        expectedResults.add(4.0);               //average comments per user
+        expectedResults.add(0.0);               //average comments per post
 
         //Then
         Assert.assertEquals(expectedResults, actualResults);
