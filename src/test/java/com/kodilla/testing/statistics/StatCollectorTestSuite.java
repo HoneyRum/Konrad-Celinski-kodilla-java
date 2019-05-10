@@ -3,7 +3,6 @@ package com.kodilla.testing.statistics;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import org.junit.Assert;
 
@@ -28,17 +27,12 @@ public class StatCollectorTestSuite {
         StatCollector statCollector = new StatCollector();
 
         //When
-        ArrayList<Double> actualResults = statCollector.calculateAdvStatistics(statisticsMock);
-        ArrayList<Double> expectedResults = new ArrayList<>();
-        expectedResults.add(50.0);              //users
-        expectedResults.add(0.0);               //posts
-        expectedResults.add(200.0);             //comments
-        expectedResults.add(0.0);               //average posts per user
-        expectedResults.add(4.0);               //average comments per user
-        expectedResults.add(0.0);               //average comments per post
+        statCollector.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(expectedResults, actualResults);
+        Assert.assertEquals(4.0, statCollector.getAverageUserComments(), 0.05);
+        Assert.assertEquals(0.0, statCollector.getAveragePostsComments(), 0.05);
+        Assert.assertEquals(0.0, statCollector.getAverageUserPosts(), 0.05);
 
 
     }
@@ -59,18 +53,12 @@ public class StatCollectorTestSuite {
         StatCollector statCollector = new StatCollector();
 
         //When
-        ArrayList<Double> actualResults = statCollector.calculateAdvStatistics(statisticsMock);
-        ArrayList<Double> expectedResults = new ArrayList<>();
-        expectedResults.add(50.0);
-        expectedResults.add(1000.0);
-        expectedResults.add(2000.0);
-        expectedResults.add(20.0);
-        expectedResults.add(40.0);
-        expectedResults.add(2.0);
+        statCollector.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(expectedResults, actualResults);
-
+        Assert.assertEquals(40.0, statCollector.getAverageUserComments(), 0.05);
+        Assert.assertEquals(2.0, statCollector.getAveragePostsComments(), 0.05);
+        Assert.assertEquals(20.0, statCollector.getAverageUserPosts(), 0.05);
     }
     @Test
     public void testAverageZeroComments(){
@@ -89,17 +77,12 @@ public class StatCollectorTestSuite {
         StatCollector statCollector = new StatCollector();
 
         //When
-        ArrayList<Double> actualResults = statCollector.calculateAdvStatistics(statisticsMock);
-        ArrayList<Double> expectedResults = new ArrayList<>();
-        expectedResults.add(50.0);
-        expectedResults.add(1000.0);
-        expectedResults.add(0.0);
-        expectedResults.add(20.0);
-        expectedResults.add(0.0);
-        expectedResults.add(0.0);
+        statCollector.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(expectedResults, actualResults);
+        Assert.assertEquals(0.0, statCollector.getAverageUserComments(), 0.05);
+        Assert.assertEquals(0.0, statCollector.getAveragePostsComments(), 0.05);
+        Assert.assertEquals(20.0, statCollector.getAverageUserPosts(), 0.05);
 
     }
     @Test
@@ -119,17 +102,12 @@ public class StatCollectorTestSuite {
         StatCollector statCollector = new StatCollector();
 
         //When
-        ArrayList<Double> actualResults = statCollector.calculateAdvStatistics(statisticsMock);
-        ArrayList<Double> expectedResults = new ArrayList<>();
-        expectedResults.add(50.0);
-        expectedResults.add(1000.0);
-        expectedResults.add(500.0);
-        expectedResults.add(20.0);
-        expectedResults.add(10.0);
-        expectedResults.add(0.5);
+        statCollector.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(expectedResults, actualResults);
+        Assert.assertEquals(10.0, statCollector.getAverageUserComments(), 0.05);
+        Assert.assertEquals(0.5, statCollector.getAveragePostsComments(), 0.05);
+        Assert.assertEquals(20.0, statCollector.getAverageUserPosts(), 0.05);
 
     }
     @Test
@@ -149,17 +127,12 @@ public class StatCollectorTestSuite {
         StatCollector statCollector = new StatCollector();
 
         //When
-        ArrayList<Double> actualResults = statCollector.calculateAdvStatistics(statisticsMock);
-        ArrayList<Double> expectedResults = new ArrayList<>();
-        expectedResults.add(50.0);
-        expectedResults.add(100.0);
-        expectedResults.add(1000.0);
-        expectedResults.add(2.0);
-        expectedResults.add(20.0);
-        expectedResults.add(10.0);
+        statCollector.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(expectedResults, actualResults);
+        Assert.assertEquals(20.0, statCollector.getAverageUserComments(), 0.05);
+        Assert.assertEquals(10.0,  statCollector.getAveragePostsComments(), 0.05);
+        Assert.assertEquals(2.0, statCollector.getAverageUserPosts(), 0.05);
     }
     @Test
     public void testZeroUsers(){
@@ -178,17 +151,12 @@ public class StatCollectorTestSuite {
         StatCollector statCollector = new StatCollector();
 
         //When
-        ArrayList<Double> actualResults = statCollector.calculateAdvStatistics(statisticsMock);
-        ArrayList<Double> expectedResults = new ArrayList<>();
-        expectedResults.add(0.0);
-        expectedResults.add(1000.0);
-        expectedResults.add(200.0);
-        expectedResults.add(0.0);
-        expectedResults.add(0.0);
-        expectedResults.add(0.2);
+        statCollector.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(expectedResults, actualResults);
+        Assert.assertEquals(0.0, statCollector.getAverageUserComments(), 0.05);
+        Assert.assertEquals(0.2, statCollector.getAveragePostsComments(), 0.05);
+        Assert.assertEquals(0.0, statCollector.getAverageUserPosts(), 0.05);
 
     }
     @Test
@@ -208,17 +176,12 @@ public class StatCollectorTestSuite {
         StatCollector statCollector = new StatCollector();
 
         //When
-        ArrayList<Double> actualResults = statCollector.calculateAdvStatistics(statisticsMock);
-        ArrayList<Double> expectedResults = new ArrayList<>();
-        expectedResults.add(100.0);
-        expectedResults.add(1000.0);
-        expectedResults.add(2000.0);
-        expectedResults.add(10.0);
-        expectedResults.add(20.0);
-        expectedResults.add(2.0);
+        statCollector.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(expectedResults, actualResults);
+        Assert.assertEquals(20.0, statCollector.getAverageUserComments(), 0.05);
+        Assert.assertEquals(2.0, statCollector.getAveragePostsComments(), 0.05);
+        Assert.assertEquals(10.0, statCollector.getAverageUserPosts(), 0.05);
 
     }
 }
