@@ -50,5 +50,6 @@ public class LibraryUser {
         result = 31 * result + lastname.hashCode();
         result = 31 * result + peselID.hashCode();
         return result;
+
     }
 }
