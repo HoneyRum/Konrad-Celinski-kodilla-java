@@ -3,8 +3,6 @@ package com.kodilla.stream.array;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
-
 public class ArrayOperationsTestSuite {
     @Test
     public void testGetAverage() {
