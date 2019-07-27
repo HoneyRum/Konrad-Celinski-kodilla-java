@@ -4,15 +4,10 @@ public class FirstChallenge {
 
     public double divide(double a, double b) throws ArithmeticException {
 
-        try {
-            if (b == 0) {
-                throw new ArithmeticException();
-            }
-            return a / b;
-        } catch(ArithmeticException e){
-            System.out.println("Error: " + e);
-            return 0;
+        if (b == 0) {
+            throw new ArithmeticException();
         }
+        return a / b;
     }
 
     /**
@@ -22,10 +17,13 @@ public class FirstChallenge {
     public static void main(String[] args) {
 
         FirstChallenge firstChallenge = new FirstChallenge();
+        try {
 
-        double result = firstChallenge.divide(3, 0);
+            double result = firstChallenge.divide(3, 0);
+            System.out.println(result);
+        } catch(ArithmeticException e){
 
-        System.out.println(result);
-
+            System.out.println("Error: " + e);
+        }
     }
 }
