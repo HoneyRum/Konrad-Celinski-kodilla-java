@@ -8,6 +8,8 @@ public class ExceptionHandling {
             secondChallenge.probablyIWillThrowException(2.0, 2.0);
         } catch(Exception e){
             System.out.println("Error :" + e);
+        } finally{
+            System.out.println("Finally stuff");
         }
     }
 }
